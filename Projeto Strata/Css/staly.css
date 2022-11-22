@@ -1,0 +1,367 @@
+:root{
+    --white1: #fff; /* variavel para se usar nas cores do site*/
+    --cra: #666;
+
+    --inherit: rgba(255, 255, 255, 0.5); /*cor usada no link e no texto do h1*/
+
+    --corlinks: #49bf9d; /*cor usada nos links*/
+}
+
+body{
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: var(--cra);
+    font-weight: normal;  /* por padrão vão vem nessa configuração. é opcional*/
+    line-height: 1.7;
+}
+
+a{
+    transition: color .2s linear, border .2s linear;
+    text-decoration: none;
+    border-bottom: 1px dotted;
+    color: var(--corlinks);
+}
+
+a:hover{
+    border-bottom-color: transparent; /*para a borda sumir quando passar o mouse por cima do link*/
+}
+
+img{
+    max-width: 100%;
+}
+
+p{
+    margin: 0 0 2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: #787878; /*sua cor*/
+    font-weight: normal; /*tirando o negrito*/ 
+    margin: 1em 0; /*formatação do tamanho*/
+}
+
+/*formatação de cada elemento*/
+
+h1{
+    font-size: 36px;    
+}
+h2{
+    font-size: 30px;
+}
+h3{
+    font-size: 26px;
+}
+h4{
+    font-size: 22px;
+}
+h5{
+    font-size: 18px;
+}
+h6{
+    font-size: 15px;
+}
+
+sub, sup{
+    font-size: 12px;
+}
+
+blockquote{
+    border-left: 5px solid #efefef;
+    margin: 2em 0;
+    padding: .5em 0 .5em 1.5em;
+}
+
+code{
+   background: #f7f7f7;
+    border-radius: .35em;
+    border: 2px solid #efefef;
+    font-size: .9em;
+    padding: 0.25em 0.65em;
+    font-family: 'Courier New', Courier, monospace;
+    color: #929292;
+}
+
+pre code{
+    display: block;
+}
+
+ul, ol{
+    margin: 0; /*zerando as margens das listas*/
+    padding: 0;
+    padding-left: 1.1em;  /*espaçamento */
+}
+
+li{
+    padding-left: .5em;
+}
+
+.ul-alternate{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.ul-alternate li{
+    border-bottom: 2px solid #d8d8d8; /*lembrar de mudar a cor da bordar*/
+    padding-left: 0; /*retirar o espaçamento que se tem*/
+}
+
+.ul-alternate li:last-child{ /*para se formatar, retirando a ultima linha*/
+    border: 0;
+}
+
+.ul-icons{
+    list-style: none;
+    padding-left: 0;
+}
+
+.ul-icons li{
+    display: inline-block;
+    font-size: 2em;
+    color: var(--corlinks);
+}
+
+.row{
+    overflow: auto;
+}
+
+.col-2{
+    width: 50%;
+    float: left;
+}
+
+input, label, textarea, select{
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input, textarea, select{
+    background: #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    border: 3px solid transparent;
+    margin-bottom: 15px;
+}
+
+/* pegando os inputs por atributos*/
+
+input[type="radio"], input[type="checkbox"]{
+    width: auto;
+}
+
+input:focus, textarea:focus{
+    border: 3px solid #49bf9d;
+    outline: none; /*para se retirar o formato padrão das bordas de caixas de texto*/
+}
+
+textarea{
+    height: 10em;
+}
+
+/*formatacão dos botões*/
+.button-default{
+    background-color: var(--corlinks);
+    border: 3px solid var(--corlinks);
+    color: var(--white1);
+    padding: .75em 1.5em;
+    border-radius: 5px; /*a borda dos botões*/
+    font-size: .8em;
+    display: inline-block; /*para deixar o elemento de linha, em elemento de bloco*/
+    width: auto; /*voltar a largura original*/
+    transition: all .4s;
+    cursor: pointer;
+}
+
+.button-default:hover{
+    background-color: #60e0bc;
+    border-color: transparent;
+}
+
+.button-default-stroke{
+    background-color: var(--white1);
+    border-color: #efefef;
+    color: inherit;  /* esse inherit vai hedar a color de seu pai */
+}
+
+.button-default-stroke:hover{
+    color: var(--corlinks);
+    border-color: var(--corlinks);
+    background-color: var(--white1);
+}
+
+.button-default-small{
+    font-size: .6em;
+
+}
+
+.button-default-big{
+    font-size: 1em;
+}
+
+.button-default-full{
+    display: block;
+    text-align: center; /*para centralizar*/
+}
+
+.imagem-link{
+    border: 0;
+}
+
+/* formatando a tabela*/
+
+.table{
+    width: 100%; /*vai ocupar toda a tela*/
+    margin: 0 0 2em 0;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.table td{
+    padding: .75em;
+}
+
+.table th{
+    background: #ccc;
+    padding: .75em;
+}
+
+.table tbody tr td{
+    border-bottom: 1px solid #ccc;
+}
+
+.table tbody tr:first-child td{
+    border-top: 2px solid #666; /*se colocar uma linha de cor diferente na primeira linha do formulario*/
+}
+
+.table tbody tr:last-child td{
+    border-bottom: 2px solid #666; /*colocar uma cor na ultima linha*/
+}
+
+/* .table tbody tr:nth-child(3) td{ // 
+    background: #49bf9d;
+}
+quando se quer pegar uma linha especifica!
+*/
+
+/*formatando para se mudar a cor, apenas dos numeros impares*/
+
+.table tbody tr:nth-child(odd) td{
+    background: #eee;
+}
+
+/* formatação da tabela-alternate */
+
+/* para se retirar a linha mais escura que se tinha, na primeira e ultima linha */
+.table-alternate tbody td, .table-alternate tbody tr:first-child td, .table-alternate tbody tr:last-child td{
+    border: 1px solid #ddd;
+}
+
+.main-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 35%;
+    padding: 124px 54px 72px;
+    box-sizing: border-box;
+    background-image: url(../images/overlay.png), url(../images/bg.jpg);
+    background-position: left top;
+    background-size: auto, cover;
+    text-align: right;
+}
+
+.main-header-title{
+    font-size: 22px; /*tamanho da fonte*/
+    line-height: 1.5; /* o espaçamento*/
+    color: var(--white1);
+    font-weight: normal; /*para se tirar a formatação de negrito */
+    color: var(--inherit);
+}
+
+.main-header-title strong{
+    color: var(--white1);
+    font-weight: normal;
+}
+
+.main-header-link{
+    color: var(--inherit);
+}
+
+.main-header-link:hover{
+    color: var(--corlinks);
+}
+.main-content{
+    width: 65%;
+    margin-left: 35%;
+    padding: 124px 54px 72px;
+    box-sizing: border-box;
+}
+
+.main-header-link img{
+    border-radius: 50%;
+}
+
+.recente-works-cards img{
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.gallery-thumb img, .gallery-img img{
+    margin-bottom: 2%;
+    display: inline-block;
+    border-radius: 5px;
+}
+.gallery-img img{
+    width: 100%;
+}
+
+/*Formatando o Grid*/
+
+.row{
+    overflow: auto;
+}
+
+.col-2{
+    width: 48.5%;
+    float: left;
+}
+
+.col-2:first-child{
+    margin-right: 1.5%;
+}
+
+.col-2:last-child{
+    margin-left: 1.5%;
+}
+.col-2-3{
+    width: 66%;
+    float: left;
+   
+}
+
+.col-1-3{
+    width: 32%;
+    float: left;
+}
+
+.col-1-3:nth-child(3n - 2){
+    margin-right: 2%; 
+}
+
+.col-1-3:nth-child(3n){
+    margin-left: 2%; 
+}
+
+.col-2-3 + .col-1-3, .col-1-3 + .col-2-3{
+    margin-left: 2%;
+}
+
+.main-footer{
+    font-size: 16px;
+    position: fixed;
+    bottom: 0;
+    width: 35%;
+    left: 0;
+    padding: 0 54px 72px;
+    box-sizing: border-box;
+    text-align: right;
+}
